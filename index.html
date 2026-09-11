@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Muhammad Nur Fadhillah — Web Developer dan lulusan Pendidikan Komputer yang berfokus pada aplikasi web, media pembelajaran interaktif, sistem evaluasi, dan CMS/LMS.">
+    <meta name="author" content="Muhammad Nur Fadhillah">
+    <meta name="theme-color" content="#166534">
+
+    <title>Muhammad Nur Fadhillah | Web Developer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #166534;
+            --primary-2: #22c55e;
+            --primary-soft: #f0fdf4;
+            --bg: #ffffff;
+            --bg-soft: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #334155;
+            --border: #cbd5e1;
+            --shadow: 0 16px 40px rgba(15, 23, 42, 0.10);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --nav-height: 76px;
+            --container: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: calc(var(--nav-height) + 20px);
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(calc(100% - 40px), var(--container));
+            margin-inline: auto;
+        }
+
+        .section {
+            padding: 96px 0;
+        }
+
+        .section-soft {
+            background: var(--bg-soft);
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 42px;
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.86rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .section-kicker::before {
+            content: "";
+            width: 26px;
+            height: 2px;
+            background: var(--primary-2);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.16;
+            letter-spacing: -0.04em;
+            margin-bottom: 14px;
+        }
+
+        .section-description {
+            color: var(--text-muted);
+            max-width: 650px;
+        }
+
+        /* Navigation */
+        .site-header {
+            position: fixed;
+            inset: 0 0 auto;
+            height: var(--nav-height);
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.88);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+            backdrop-filter: blur(14px);
+        }
+
+        .navbar {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+
+        .brand span {
+            color: var(--primary-2);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.92rem;
+            color: #334155;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: var(--text);
+            color: #fff !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            padding: calc(var(--nav-height) + 76px) 0 80px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 88% 20%, rgba(34, 197, 94, 0.12), transparent 28%),
+                radial-gradient(circle at 10% 70%, rgba(22, 101, 52, 0.08), transparent 30%),
+                #fff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+            align-items: center;
+            gap: 72px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.86rem;
+            margin-bottom: 24px;
+        }
+
+        .eyebrow-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--primary-2);
+            box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.13);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.65rem);
+            line-height: 1.02;
+            letter-spacing: -0.055em;
+            margin-bottom: 22px;
+            max-width: 760px;
+        }
+
+        .hero h1 .accent {
+            color: var(--primary);
+        }
+
+        .hero-role {
+            color: #334155;
+            font-weight: 700;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 18px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            color: var(--text-muted);
+            font-size: 1.04rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 48px;
+            padding: 0 20px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(22, 101, 52, 0.18);
+        }
+
+        .btn-primary:hover {
+            background: #14532d;
+        }
+
+        .btn-secondary {
+            background: #fff;
+            color: var(--text);
+            border-color: var(--border);
+        }
+
+        .quick-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px 28px;
+            color: #475569;
+            font-size: 0.9rem;
+        }
+
+        .quick-facts span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .quick-facts i {
+            color: var(--primary);
+        }
+
+        .hero-visual {
+            position: relative;
+            display: grid;
+            place-items: center;
+        }
+
+        .profile-frame {
+            width: min(100%, 390px);
+            aspect-ratio: 4 / 5;
+            border-radius: 34px;
+            padding: 12px;
+            background: linear-gradient(145deg, #fff, #ecfdf5);
+            border: 1px solid #dcfce7;
+            box-shadow: var(--shadow);
+            transform: rotate(2deg);
+        }
+
+        .profile-frame img,
+        .profile-fallback {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+        }
+
+        .profile-frame img {
+            object-fit: cover;
+            object-position: center;
+            background: #e2e8f0;
+        }
+
+        .profile-fallback {
+            display: none;
+            place-items: center;
+            background: linear-gradient(145deg, #dcfce7, #f8fafc);
+            color: var(--primary);
+            font-size: clamp(4rem, 12vw, 7rem);
+            font-weight: 800;
+            letter-spacing: -0.08em;
+        }
+
+        /* About / Skills */
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 56px;
+            align-items: start;
+        }
+
+        .about-main .section-header {
+            margin-bottom: 28px;
+        }
+
+        .about-skills {
+            padding-top: 2px;
+        }
+
+        .about-copy {
+            color: var(--text-muted);
+        }
+
+        .about-copy p + p {
+            margin-top: 16px;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .skill-card {
+            padding: 18px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            background: #fff;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .skill-card i {
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            color: var(--primary);
+            background: var(--primary-soft);
+            margin-bottom: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 0.97rem;
+            margin-bottom: 5px;
+        }
+
+        .skill-card p {
+            font-size: 0.84rem;
+            color: var(--text-muted);
+        }
+
+        /* Experience */
+        .experience-groups {
+            display: grid;
+            gap: 38px;
+        }
+
+        .experience-group-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text);
+        }
+
+        .experience-group-title i {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--primary-soft);
+            color: var(--primary);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .experience-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 24px;
+            background: #fff;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+            border-color: #86efac;
+        }
+
+        .experience-card .experience-meta {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 9px;
+        }
+
+        .experience-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+        }
+
+        .experience-card .experience-org {
+            color: #334155;
+            font-weight: 650;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+        }
+
+        .experience-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .experience-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .experience-feature-icon {
+            min-height: 150px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: linear-gradient(135deg, #14532d, #22c55e);
+            color: #fff;
+            font-size: 2.4rem;
+        }
+
+        /* Projects */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .project-card {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: #fff;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .project-cover {
+            min-height: 185px;
+            display: flex;
+            align-items: end;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #14532d, #22c55e);
+        }
+
+        .project-card:nth-child(2) .project-cover {
+            background: linear-gradient(135deg, #0f172a, #334155);
+        }
+
+        .project-card:nth-child(3) .project-cover {
+            background: linear-gradient(135deg, #164e63, #06b6d4);
+        }
+
+        .project-cover::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            top: -55px;
+            right: -35px;
+        }
+
+        .project-cover i {
+            font-size: 2.4rem;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-type {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-bottom: 8px;
+        }
+
+        .project-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #334155;
+            font-size: 0.9rem;
+            margin-bottom: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            color: #475569;
+            background: #f8fafc;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            background: #fff;
+            font-size: 0.82rem;
+            font-weight: 700;
+            transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary-2);
+            color: var(--primary);
+        }
+
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .education-card {
+            padding: 28px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-md);
+            background: #fff;
+        }
+
+        .education-year {
+            display: inline-block;
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 800;
+        }
+
+        .education-card h3 {
+            margin-bottom: 4px;
+            font-size: 1.1rem;
+        }
+
+        .education-card .major {
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* Contact */
+        .contact-card {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 42px;
+            padding: 48px;
+            border-radius: 28px;
+            background: var(--text);
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .contact-card::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: rgba(34, 197, 94, 0.13);
+            right: -120px;
+            bottom: -150px;
+        }
+
+        .contact-card h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
+        }
+
+        .contact-card p {
+            color: #cbd5e1;
+            max-width: 590px;
+        }
+
+        .contact-links {
+            display: grid;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            transition: background 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-link i {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: rgba(34, 197, 94, 0.16);
+            color: #86efac;
+        }
+
+        .contact-link small {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.74rem;
+        }
+
+        .contact-link strong {
+            font-size: 0.88rem;
+        }
+
+        footer {
+            padding: 26px 0;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.84rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 920px) {
+            .hero-grid,
+            .about-grid,
+            .contact-card {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 46px;
+            }
+
+            .hero-visual {
+                max-width: 430px;
+                margin-inline: auto;
+                width: 100%;
+            }
+
+            .project-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+            :root {
+                --nav-height: 68px;
+            }
+
+            .section {
+                padding: 72px 0;
+            }
+
+            .menu-toggle {
+                display: grid;
+                place-items: center;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(var(--nav-height) - 1px);
+                left: 20px;
+                right: 20px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+                padding: 12px;
+                border: 1px solid var(--border);
+                border-radius: 16px;
+                background: #fff;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 11px 12px;
+                border-radius: 10px;
+            }
+
+            .nav-cta {
+                text-align: center;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: calc(var(--nav-height) + 60px);
+            }
+
+            .hero h1 {
+                font-size: clamp(2.7rem, 13vw, 4.2rem);
+            }
+
+            .project-grid,
+            .education-grid,
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-card.featured {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-feature-icon {
+                min-height: 120px;
+            }
+
+            .contact-card {
+                padding: 34px 24px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: min(calc(100% - 28px), var(--container));
+            }
+
+            .hero-actions {
+                display: grid;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .profile-frame {
+                width: 90%;
+            }
+
+            .quick-facts {
+                display: grid;
+                gap: 10px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navigasi utama">
+            <a class="brand" href="#beranda" aria-label="Kembali ke beranda">Portofolio<span>.</span></a>
+
+            <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#pengalaman">Pengalaman</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#pendidikan">Pendidikan</a></li>
+                <li><a class="nav-cta" href="#kontak">Hubungi Saya</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="beranda">
+            <div class="container hero-grid">
+                <div>
+                    <h1>
+                        Muhammad Nur<br>
+                        <span class="accent">Fadhillah.</span>
+                    </h1>
+
+                    <div class="hero-role">
+                        Web Developer · Interactive Learning Media · Evaluation Systems · CMS/LMS
+                    </div>
+
+                    <p class="hero-description">
+                        Lulusan S1 Pendidikan Komputer FKIP Universitas Lambung Mangkurat yang berfokus pada pengembangan aplikasi web, media pembelajaran interaktif, sistem evaluasi, serta pengelolaan konten dan data yang fungsional dan mudah digunakan.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#proyek">
+                            Lihat Proyek <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a class="btn btn-secondary" href="#kontak">
+                            <i class="fa-regular fa-paper-plane"></i> Hubungi Saya
+                        </a>
+                    </div>
+
+                    <div class="quick-facts" aria-label="Ringkasan profil">
+                        <span><i class="fa-solid fa-location-dot"></i> Banjarmasin, Indonesia</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> Fresh Graduate ULM</span>
+                        <span><i class="fa-solid fa-code"></i> Web & Learning Systems</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-frame">
+                        <!-- Pastikan file foto.jpeg berada satu folder dengan index.html -->
+                        <img src="foto.jpeg" alt="Muhammad Nur Fadhillah" loading="eager" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+                        <div class="profile-fallback" aria-label="Placeholder foto profil">MNF</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="tentang">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-main">
+                        <div class="section-header">
+                            <span class="section-kicker">Profil</span>
+                            <h2 class="section-title">Tentang Saya</h2>
+                            <p class="section-description">
+                                Menggabungkan latar belakang Pendidikan Komputer dengan pengembangan web untuk membangun solusi digital yang relevan dan mudah digunakan.
+                            </p>
+                        </div>
+
+                        <div class="about-copy">
+                            <p>
+                                Saya berfokus pada pengembangan aplikasi web, media pembelajaran interaktif, sistem evaluasi, CMS/LMS, dan aplikasi berbasis data. Saya juga memanfaatkan AI sebagai alat bantu pengembangan untuk mempercepat eksplorasi solusi, debugging, dan penulisan kode, sambil tetap memahami struktur, alur kerja, serta implementasi yang saya gunakan.
+                            </p>
+                            <p>
+                                Pengalaman organisasi, penelitian, dan proyek akademik membentuk kemampuan saya dalam bekerja sama, mengelola pekerjaan, berkomunikasi, serta menerjemahkan kebutuhan pengguna menjadi fitur yang terstruktur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="about-skills">
+                        <div class="skill-grid">
+                        <article class="skill-card">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <h3>Web Development</h3>
+                            <p>Membangun antarmuka dan fitur aplikasi web yang responsif serta terstruktur.</p>
+                        </article>
+
+                        <article class="skill-card">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                            <h3>Learning Media</h3>
+                            <p>Mengembangkan pengalaman belajar digital yang interaktif dan berorientasi pengguna.</p>
+                        </article>
+
+                        <article class="skill-card">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h3>Evaluation Systems</h3>
+                            <p>Merancang sistem penilaian, evaluasi, dan pengelolaan hasil belajar berbasis web.</p>
+                        </article>
+
+                        <article class="skill-card">
+                            <i class="fa-solid fa-database"></i>
+                            <h3>Data & CMS/LMS</h3>
+                            <p>Mengelola alur data, konten, pengguna, dan proses pembelajaran dalam aplikasi.</p>
+                        </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="pengalaman">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Pengalaman</span>
+                    <h2 class="section-title">Pengalaman yang Relevan</h2>
+                    <p class="section-description">
+                        Pengalaman saya dikelompokkan berdasarkan organisasi, penelitian, dan proyek akademik agar lebih mudah dipindai.
+                    </p>
+                </div>
+
+                <div class="experience-groups">
+                    <div class="experience-group">
+                        <h3 class="experience-group-title"><i class="fa-solid fa-users"></i> Organisasi</h3>
+                        <div class="experience-grid">
+                            <article class="experience-card">
+                                <div class="experience-meta">2024</div>
+                                <h3>Ketua Umum Himpunan Mahasiswa</h3>
+                                <div class="experience-org">Pendidikan Komputer · FKIP ULM</div>
+                                <p>Memimpin dan mengoordinasikan program kerja organisasi, membagi tanggung jawab tim, serta menjadi penghubung aspirasi mahasiswa di tingkat program studi.</p>
+                            </article>
+
+                            <article class="experience-card">
+                                <div class="experience-meta">2024</div>
+                                <h3>Anggota Departemen Pengabdian Masyarakat</h3>
+                                <div class="experience-org">UKM FKIP Mengajar ULM</div>
+                                <p>Terlibat dalam perencanaan dan pelaksanaan kegiatan pendidikan serta pengabdian kepada masyarakat bersama mahasiswa FKIP Universitas Lambung Mangkurat.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- <div class="experience-group">
+                        <h3 class="experience-group-title"><i class="fa-solid fa-flask"></i> Penelitian</h3>
+                        <div class="experience-grid">
+                            <article class="experience-card">
+                                <div class="experience-meta">PDWM</div>
+                                <h3>Sistem Similaritas Kode Program Python</h3>
+                                <div class="experience-org">Tim Program Dosen Wajib Penelitian</div>
+                                <p>Terlibat dalam pengembangan sistem similaritas kode program Python untuk mendukung evaluasi pembelajaran dan analisis kemiripan kode.</p>
+                            </article>
+
+                            <article class="experience-card">
+                                <div class="experience-meta">Penelitian</div>
+                                <h3>Sistem Evaluasi Kelompok berbasis SCI</h3>
+                                <div class="experience-org">Student Contribution Index</div>
+                                <p>Berpartisipasi dalam pengembangan sistem evaluasi kelompok yang mengintegrasikan kontribusi anggota dan proses penilaian untuk mendukung pembelajaran kolaboratif.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="experience-group">
+                        <h3 class="experience-group-title"><i class="fa-solid fa-graduation-cap"></i> Proyek Akademik</h3>
+                        <div class="experience-grid">
+                            <article class="experience-card featured">
+                                <div class="experience-feature-icon"><i class="fa-solid fa-square-root-variable"></i></div>
+                                <div>
+                                    <div class="experience-meta">Skripsi · 2026</div>
+                                    <h3>PythaLearn — Media Pembelajaran Interaktif Teorema Pythagoras</h3>
+                                    <div class="experience-org">Tugas Akhir S1 Pendidikan Komputer</div>
+                                    <p>Mendesain dan mengembangkan media pembelajaran interaktif berbasis web untuk kelas VIII yang memadukan materi, visualisasi, latihan, evaluasi, dan elemen gamifikasi sebagai produk penelitian skripsi.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="proyek">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Portofolio</span>
+                    <h2 class="section-title">Proyek Pilihan</h2>
+                    <p class="section-description">
+                        Beberapa proyek yang paling merepresentasikan kemampuan saya dalam membangun solusi web dan teknologi pendidikan.
+                    </p>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card">
+                        <div class="project-cover" aria-hidden="true">
+                            <i class="fa-solid fa-square-root-variable"></i>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-type">Proyek Akademik</div>
+                            <h3>Web Pembelajaran Interaktif -PythaLearn</h3>
+                            <p>Media pembelajaran interaktif berbasis web untuk materi Teorema Pythagoras kelas VIII yang memadukan materi, latihan, evaluasi, visualisasi, dan elemen gamifikasi.</p>
+                            <div class="tags">
+                                <span class="tag">Laravel</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">Interactive Learning</span>
+                            </div>
+                            <div class="project-actions">
+                                <!-- Ganti # dengan link proyek Anda -->
+                                <a class="project-link" href="https://pythalearn.research-media.web.id" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Proyek</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-cover" aria-hidden="true">
+                            <i class="fa-brands fa-python"></i>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-type">Evaluation System</div>
+                            <h3>Sistem Similaritas Kode Program Python</h3>
+                            <p>Sistem yang dikembangkan untuk membantu proses evaluasi pembelajaran pemrograman melalui analisis kemiripan kode program Python.</p>
+                            <div class="tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Web System</span>
+                                <span class="tag">Code Similarity</span>
+                                <span class="tag">Education</span>
+                            </div>
+                            <div class="project-actions">
+                                <!-- Ganti # dengan link proyek Anda -->
+                                <a class="project-link" href="https://pymatch.research-media.web.id" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Proyek</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-cover" aria-hidden="true">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-type">Collaborative Evaluation</div>
+                            <h3>Sistem Evaluasi Kelompok berbasis SCI - Groupizone</h3>
+                            <p>Sistem evaluasi pembelajaran kelompok yang mendukung pemantauan kontribusi anggota dan penilaian menggunakan pendekatan Student Contribution Index.</p>
+                            <div class="tags">
+                                <span class="tag">Evaluation</span>
+                                <span class="tag">SCI</span>
+                                <span class="tag">Collaboration</span>
+                                <span class="tag">Web App</span>
+                            </div>
+                            <div class="project-actions">
+                                <!-- Ganti # dengan link proyek Anda -->
+                                <a class="project-link" href="https://groupizone.research-media.web.id" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Lihat Proyek</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-soft" id="pendidikan">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-kicker">Pendidikan</span>
+                    <h2 class="section-title">Riwayat Pendidikan</h2>
+                    <p class="section-description">
+                        Riwayat pendidikan yang paling relevan dengan bidang teknologi dan pengembangan perangkat lunak.
+                    </p>
+                </div>
+
+                <div class="education-grid">
+                    <article class="education-card">
+                        <span class="education-year">2022 — 2026</span>
+                        <h3>Universitas Lambung Mangkurat</h3>
+                        <div class="major">S1 Pendidikan Komputer · FKIP</div>
+                        <p>Berfokus pada pengembangan media pembelajaran interaktif, sistem evaluasi pembelajaran, pengembangan web, dan penerapan teknologi dalam pendidikan.</p>
+                    </article>
+
+                    <article class="education-card">
+                        <span class="education-year">2019 — 2022</span>
+                        <h3>SMK Negeri 1 Martapura</h3>
+                        <div class="major">Teknik Komputer dan Jaringan</div>
+                        <p>Mempelajari dasar jaringan komputer, perangkat keras, sistem operasi, troubleshooting, dan teknologi komputer.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="kontak">
+            <div class="container">
+                <div class="contact-card">
+                    <div>
+                        <span class="section-kicker" style="color:#86efac;">Kontak</span>
+                        <h2>Tertarik untuk bekerja sama?</h2>
+                        <p>Saya terbuka untuk peluang kerja, proyek pengembangan web, teknologi pendidikan, maupun kolaborasi yang relevan dengan kemampuan saya.</p>
+                    </div>
+
+                    <div class="contact-links">
+                        <!-- GANTI EMAIL_ANDA dengan email profesional Anda -->
+                        <a class="contact-link" href="mailto:mnurfadhillah189@gmail.com">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>
+                                <small>Email</small>
+                                <strong>mnurfadhillah189@gmail.com</strong>
+                            </span>
+                        </a>
+                        <!-- WhatsApp -->
+                        <a class="contact-link" href="https://wa.me/6285750693123" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>
+                                <small>WhatsApp</small>
+                                <strong>+62 857-5069-3123</strong>
+                            </span>
+                        </a>
+                            </span>
+                        </a>
+
+                        <!-- GANTI URL_GITHUB_ANDA dengan URL GitHub Anda -->
+                        <a class="contact-link" href="https://github.com/mnfadhillah" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                            <span>
+                                <small>GitHub</small>
+                                <strong>Repository & Proyek</strong>
+                            </span>
+                        </a>
+
+                        <!-- GANTI URL_LINKEDIN_ANDA dengan URL LinkedIn Anda -->
+                        <!-- <a class="contact-link" href="URL_LINKEDIN_ANDA" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>
+                                <small>LinkedIn</small>
+                                <strong>Terhubung secara profesional</strong>
+                            </span>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>&copy; <span id="year"></span> Muhammad Nur Fadhillah.</span>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuButton.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            menuButton.setAttribute('aria-expanded', String(isOpen));
+            menuButton.innerHTML = isOpen
+                ? '<i class="fa-solid fa-xmark"></i>'
+                : '<i class="fa-solid fa-bars"></i>';
+        });
+
+        document.querySelectorAll('.nav-links a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
